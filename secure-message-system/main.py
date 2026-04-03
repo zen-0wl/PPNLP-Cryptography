@@ -1,4 +1,5 @@
-from src.chat import demo_chat
+from src.chat import secure_chat_session
+
 
 if __name__ == "__main__":
-    print(demo_chat())
+    secure_chat_session()

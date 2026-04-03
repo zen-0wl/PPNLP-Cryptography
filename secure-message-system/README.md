@@ -8,9 +8,9 @@ A foundation-level secure messaging prototype implementing modern cryptographic 
 * **Secure key exchange** using **X25519 / ECDH**
 * **Key derivation** using **HKDF-SHA256**
 * **Authenticated encryption** using **ChaCha20-Poly1305 (AEAD)**
-* End-to-end secure message demo via CLI
-
----
+* **Forward secrecy** via fresh ephemeral session keys
+* **Replay protection** using message sequence identifiers
+* **Interactive CLI secure chat** with session termination support
 
 ## Architecture
 
@@ -21,21 +21,18 @@ The system is built in four layers:
    * Long-term Ed25519 keypairs
    * Message / key signing
    * Signature verification
-
 2. **Key Exchange Layer**
 
    * Ephemeral X25519 keys
    * ECDH shared secret generation
-
 3. **Key Derivation**
 
    * Shared secret processed through HKDF
    * 256-bit session key generation
-
 4. **Message Protection**
 
-   * AEAD encryption with ChaCha20-Poly1305
-   * Confidentiality + integrity protection
+   1. AEAD encryption with ChaCha20-Poly1305
+   2. Confidentiality + integrity protection
 
 ---
 

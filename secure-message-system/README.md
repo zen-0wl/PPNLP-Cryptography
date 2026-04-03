@@ -31,9 +31,13 @@ The system is built in four layers:
    * 256-bit session key generation
 4. **Message Protection**
 
-   1. AEAD encryption with ChaCha20-Poly1305
-   2. Confidentiality + integrity protection
+   * AEAD encryption with ChaCha20-Poly1305
+   * Confidentiality + integrity protection
+5. **Session Security Enhancements**
 
+   * Forward secrecy through ephemeral X25519 keys per session
+   * Replay protection using unique message IDs
+   * Interactive CLI message loop
 ---
 
 ## Threat Model
@@ -80,9 +84,21 @@ Raw ECDH output is never used directly.
 * message forgery
 * impersonation
 * man-in-the-middle (via signature verification)
+* replay attacks (via message ID tracking)
 
 ---
+## Additional Security Features
 
+### Forward Secrecy
+Fresh ephemeral X25519 keypairs are generated for every session, ensuring compromise of one session key does not expose previous sessions.
+
+### Replay Protection
+Each encrypted message includes a unique sequence identifier. Previously seen identifiers are rejected to prevent replay attacks.
+
+### CLI Secure Chat
+The system includes an interactive terminal-based chat loop with graceful session termination using `exit`.
+
+---
 ## Run
 
 ```bash
@@ -90,7 +106,7 @@ poetry install --no-root
 poetry run python main.py
 ```
 
----
+
 
 ## Test
 

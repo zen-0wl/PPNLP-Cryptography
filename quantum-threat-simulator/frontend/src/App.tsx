@@ -5,6 +5,8 @@ import QuantumThreat from "./pages/QuantumThreat";
 import LWEDemo from "./pages/LWEDemo";
 import Benchmarks from "./pages/Benchmarks";
 import About from "./pages/About";
+import ClassicalCrypto from "./pages/ClassicalCrypto";
+import NoisePage from "./pages/NoisePage";
 
 function App() {
   return (
@@ -15,6 +17,15 @@ function App() {
         <Route path="/lwe-demo" element={<LWEDemo />} />
         <Route path="/benchmarks" element={<Benchmarks />} />
         <Route path="/about" element={<About />} />
+
+        <Route
+        path="/classical-crypto"
+        element={<ClassicalCrypto />}
+      />
+      <Route
+        path="/noise"
+        element={<NoisePage />}
+      />
       </Routes>
     </BrowserRouter>
   );

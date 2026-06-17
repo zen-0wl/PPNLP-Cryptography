@@ -1,0 +1,22 @@
+[project]
+name = "password-crack-lab"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "zen`",email = "wintertemper479@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit (>=1.58.0,<2.0.0)",
+    "bcrypt (>=5.0.0,<6.0.0)",
+    "argon2-cffi (>=25.1.0,<26.0.0)",
+    "pandas (>=3.0.3,<4.0.0)",
+    "plotly (>=6.8.0,<7.0.0)",
+    "numpy (>=2.4.6,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

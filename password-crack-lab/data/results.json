@@ -1,0 +1,26 @@
+{
+  "dictionary": {
+    "targets": 17,
+    "cracked": 17,
+    "attempts": 1834,
+    "time": 0.0023,
+    "success_rate": 100.0
+  },
+  "mutation": {
+    "targets": 17,
+    "cracked": 11,
+    "attempts": 4328,
+    "time": 0.0043,
+    "success_rate": 64.7
+  },
+  "bruteforce": {
+    "password": "cat12",
+    "attempts": 5112461,
+    "time": 6.7508
+  },
+  "benchmark": {
+    "sha256": 0.000001,
+    "argon2": 0.039284,
+    "bcrypt": 0.198009
+  }
+}
